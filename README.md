@@ -10,6 +10,13 @@ El análisis multicriterio (*Multi-Criteria Decision Analysis*, MCDA) es una met
 
 En este proyecto se implementa una combinación lineal ponderada (*Weighted Overlay*), donde variables como pendiente, distancia a fallas geológicas, ambiente geológico y proximidad a la red de drenaje son reclasificadas e integradas para obtener un índice final de susceptibilidad a deslizamientos.
 
+
+**Importante:** Este código está diseñado específicamente para análisis 
+de remociones en masa en contextos de fallas geológicas activas.
+
+⚠️ NO usar este modelo en áreas sin fallas o estructuras geológicas 
+similares sin validación previa.
+
 ---
 
 # Study Area | Área de estudio
@@ -137,6 +144,8 @@ El flujo completo de procesamiento se encuentra documentado en:
 
 # Acknowledgements | Agradecimientos
 
-Este proyecto fue desarrollado originalmente como parte del curso **Aplicaciones de los Sistemas de Información Geográfica (SIG) y Ordenamiento Territorial con SIG y TICs** de la carrera de **Geografía** de la **Universidad Austral de Chile (UACh)**.
+_Este proyecto fue desarrollado originalmente como parte del curso **Aplicaciones de los Sistemas de Información Geográfica (SIG) y Ordenamiento Territorial con SIG y TICs** de la carrera de **Geografía** de la **Universidad Austral de Chile (UACh)**._
 
 La actividad original fue adaptada para este repositorio con el propósito de documentar un flujo de trabajo reproducible para la evaluación de susceptibilidad a deslizamientos mediante análisis multicriterio (*Weighted Overlay*), utilizando Python y QGIS.
+
+
