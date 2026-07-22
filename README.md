@@ -50,14 +50,43 @@ Este ejercicio fue desarrollado con fines académicos para demostrar una metodol
 
 # Workflow | Flujo de trabajo
 
-La siguiente figura resume las principales etapas del procesamiento.
+```mermaid
+flowchart TD
 
-<p align="center">
-<img src="images/workflow.png" width="900">
-</p>
+    A[Datos de entrada]
 
----
+    A --> B1[Modelo Digital de Elevación (DEM)]
+    A --> B2[Fallas geológicas]
+    A --> B3[Ambiente geológico]
 
+    subgraph QGIS
+        B1 --> C1[Calcular pendiente]
+        C1 --> C2[Reclasificar pendiente]
+
+        B2 --> D1[Rasterizar fallas]
+        D1 --> D2[Calcular proximidad]
+        D2 --> D3[Reclasificar distancia]
+
+        B3 --> E1[Reclasificar ambiente geológico]
+        E1 --> E2[Rasterizar geología]
+    end
+
+    C2 --> F
+    D3 --> F
+    E2 --> F
+
+    subgraph Python / Jupyter Notebook
+        F[Leer capas raster]
+        F --> G[Weighted Overlay]
+        G --> H[Mapa de susceptibilidad]
+        H --> I[Exportar raster]
+        I --> J[Calcular superficie ≥ 2.5]
+        I --> K[Muestreo sobre propiedades]
+    end
+
+    J --> L[Resultados]
+    K --> L
+```
 # Input Data | Datos de entrada
 
 Para reproducir el ejercicio se requieren los siguientes insumos:
