@@ -49,7 +49,7 @@ Este ejercicio fue desarrollado con fines académicos para demostrar una metodol
 ---
 
 # Workflow | Flujo de trabajo
-
+```mermaid
 graph LR
     DEM["🗺️ DEM"] --> SLOPE["📊 Calculate<br/>Slope"]
     FALLAS["🗺️ Geological<br/>Faults"] --> RASTER_FALLAS["🔧 Rasterize<br/>Faults"]
@@ -83,7 +83,7 @@ Para reproducir el ejercicio se requieren los siguientes insumos:
 - Ambiente geológico
 
 Los datos originales no se incluyen en este repositorio debido al tamaño de los archivos.
-
+```
 ---
 
 # Methodology | Metodología
