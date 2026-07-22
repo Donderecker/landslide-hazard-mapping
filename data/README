@@ -1,1 +1,5 @@
+The `fallas.gpkg` file corresponds to SERNAGEOMIN's 1:1,000,000 map. This is the example file used in the video.
 
+You can also use the `CHAF_Pangaea_v1` file, which contains the faults at a 1:25,000 scale:
+
+> Maldonado, Valentina; Contreras, Martin; Melnick, Daniel (2021): *A comprehensive database of active and potentially-active continental faults in Chile at 1:25,000 scale*. Scientific Data, 8(20), https://doi.org/10.1038/s41597-021-00802-4
