@@ -203,9 +203,10 @@ Durante el desarrollo del proyecto se utilizaron los siguientes directorios del 
 - `images/`
 - `outputs/`
 
-> **Importante:** Actualice las rutas del notebook para que coincidan con la ubicación de estos directorios dentro de su entorno de trabajo.
+> Actualice las rutas del notebook para que coincidan con la ubicación de estos directorios dentro de su entorno de trabajo.
 
 ---
+**Importante:** Este código está diseñado específicamente para análisis de remociones en masa en contextos de fallas geológicas activas. ⚠️ NO usar este modelo en áreas sin fallas o estructuras geológicas similares sin validación previa.
 
 # Acknowledgements | Agradecimientos
 
