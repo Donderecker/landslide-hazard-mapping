@@ -1,4 +1,4 @@
-The `fallas.gpkg` file corresponds to SERNAGEOMIN's 1:1,000,000 map. This is the example file used in the video.
+The `fallas.gpkg` file corresponds to SERNAGEOMIN's 1:1,000,000 map. This is the example file used.
 
 You can also use the `CHAF_Pangaea_v1` file, which contains the faults at a 1:25,000 scale:
 
