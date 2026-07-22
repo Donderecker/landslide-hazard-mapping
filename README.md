@@ -49,6 +49,7 @@ Este ejercicio fue desarrollado con fines académicos para demostrar una metodol
 ---
 
 # Workflow | Flujo de trabajo
+
 ```mermaid
 graph LR
     DEM["🗺️ DEM"] --> SLOPE["📊 Calculate<br/>Slope"]
@@ -73,7 +74,9 @@ graph LR
     style GEOLOGIA fill:#e1f5ff
     style OVERLAY fill:#fff3e0
     style RESULTADO fill:#e8f5e9
+```
 ---
+```
 # Input Data | Datos de entrada
 
 Para reproducir el ejercicio se requieren los siguientes insumos:
