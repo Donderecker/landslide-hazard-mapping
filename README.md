@@ -53,39 +53,38 @@ Este ejercicio fue desarrollado con fines académicos para demostrar una metodol
 ```mermaid
 flowchart TD
 
-    A[Datos de entrada]
+A[Input Data]
 
-    A --> B1[Modelo Digital de Elevación (DEM)]
-    A --> B2[Fallas geológicas]
-    A --> B3[Ambiente geológico]
+A --> B1[Digital Elevation Model]
+A --> B2[Geological Faults]
+A --> B3[Geological Environment]
 
-    subgraph QGIS
-        B1 --> C1[Calcular pendiente]
-        C1 --> C2[Reclasificar pendiente]
+subgraph QGIS
+B1 --> C1[Calculate Slope]
+C1 --> C2[Reclassify Slope]
 
-        B2 --> D1[Rasterizar fallas]
-        D1 --> D2[Calcular proximidad]
-        D2 --> D3[Reclasificar distancia]
+B2 --> D1[Rasterize Faults]
+D1 --> D2[Calculate Distance]
+D2 --> D3[Reclassify Distance]
 
-        B3 --> E1[Reclasificar ambiente geológico]
-        E1 --> E2[Rasterizar geología]
-    end
+B3 --> E1[Reclassify Geology]
+E1 --> E2[Rasterize Geology]
+end
 
-    C2 --> F
-    D3 --> F
-    E2 --> F
+C2 --> F[Read Raster Layers]
+D3 --> F
+E2 --> F
 
-    subgraph Python / Jupyter Notebook
-        F[Leer capas raster]
-        F --> G[Weighted Overlay]
-        G --> H[Mapa de susceptibilidad]
-        H --> I[Exportar raster]
-        I --> J[Calcular superficie ≥ 2.5]
-        I --> K[Muestreo sobre propiedades]
-    end
+subgraph Python
+F --> G[Weighted Overlay]
+G --> H[Susceptibility Raster]
+H --> I[Export Raster]
+I --> J[Calculate Area]
+I --> K[Sample Properties]
+end
 
-    J --> L[Resultados]
-    K --> L
+J --> L[Results]
+K --> L
 ```
 # Input Data | Datos de entrada
 
