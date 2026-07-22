@@ -50,42 +50,30 @@ Este ejercicio fue desarrollado con fines académicos para demostrar una metodol
 
 # Workflow | Flujo de trabajo
 
-```mermaid
-flowchart TD
-
-A[Input Data]
-
-A --> B1[Digital Elevation Model]
-A --> B2[Geological Faults]
-A --> B3[Geological Environment]
-
-subgraph QGIS
-B1 --> C1[Calculate Slope]
-C1 --> C2[Reclassify Slope]
-
-B2 --> D1[Rasterize Faults]
-D1 --> D2[Calculate Distance]
-D2 --> D3[Reclassify Distance]
-
-B3 --> E1[Reclassify Geology]
-E1 --> E2[Rasterize Geology]
-end
-
-C2 --> F[Read Raster Layers]
-D3 --> F
-E2 --> F
-
-subgraph Python
-F --> G[Weighted Overlay]
-G --> H[Susceptibility Raster]
-H --> I[Export Raster]
-I --> J[Calculate Area]
-I --> K[Sample Properties]
-end
-
-J --> L[Results]
-K --> L
-```
+graph LR
+    DEM["🗺️ DEM"] --> SLOPE["📊 Calculate<br/>Slope"]
+    FALLAS["🗺️ Geological<br/>Faults"] --> RASTER_FALLAS["🔧 Rasterize<br/>Faults"]
+    GEOLOGIA["🗺️ Geological<br/>Environment"] --> CLASS_GEO["✏️ Reclassify<br/>Geology"]
+    
+    SLOPE --> RECLASS_SLOPE["✏️ Reclassify<br/>Slope"]
+    RASTER_FALLAS --> DIST_FALLAS["📐 Calculate<br/>Distance"]
+    DIST_FALLAS --> RECLASS_DIST["✏️ Reclassify<br/>Distance"]
+    CLASS_GEO --> RASTER_GEO["🔧 Rasterize<br/>Geology"]
+    
+    RECLASS_SLOPE --> OVERLAY["⚖️ Weighted<br/>Overlay"]
+    RECLASS_DIST --> OVERLAY
+    RASTER_GEO --> OVERLAY
+    
+    OVERLAY --> RESULTADO["✅ Susceptibility<br/>Raster"]
+    RESULTADO --> EXPORT["💾 Export<br/>Raster"]
+    EXPORT --> STATS["📈 Calculate<br/>Statistics"]
+    
+    style DEM fill:#e1f5ff
+    style FALLAS fill:#e1f5ff
+    style GEOLOGIA fill:#e1f5ff
+    style OVERLAY fill:#fff3e0
+    style RESULTADO fill:#e8f5e9
+---
 # Input Data | Datos de entrada
 
 Para reproducir el ejercicio se requieren los siguientes insumos:
